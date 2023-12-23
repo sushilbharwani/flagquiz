@@ -13,7 +13,7 @@ jobs:
        - name: Setup node
          uses: actions/setup-node@v1
          with:
-           node-version: "14.x"
+           node-version: "18.x"
 
        - name: Install
          run: npm ci && npm i -g http-server @lhci/cli
@@ -22,4 +22,6 @@ jobs:
          run: npm run build
 
        - name: LighthouseCI
-         run: lhci autorun
+         run: lhci autorun 
+         env:
+          LHCI_GITHUB_APP_TOKEN: ${{secrets.LHCI_GITHUB_APP_TOKEN}}

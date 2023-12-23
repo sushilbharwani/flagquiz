@@ -65,7 +65,8 @@ function App() {
   useEffect(()=>{
     getRandomSelectedCountry();
     //setRandomSelectedCountries(randomSelectedCountry);
-  },[]);
+   // eslint-disable-next-line react-hooks/exhaustive-deps
+   },[]);
 
  
   return (
@@ -86,7 +87,7 @@ function App() {
       <button onClick={()=>handleNext()}>Next</button>
        :
        <div>
-       <button onClick={()=>handleNext()}>Finish</button>
+       <button>Finish</button>
        <button onClick={()=>handleNext()}>Restart</button>
        </div>
 
